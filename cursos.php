@@ -21,7 +21,16 @@ body{  background-color: #fdd406 !important;}
 <div class="parallax-container slider"><!-- Slide prioncipal -->
      <ul class="slides">
       <li>
-        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/slide1.jpg"> <!-- random image -->
+      	
+      	 	<?php
+				// Start the Loop.
+				while ( have_posts() ) : the_post();
+					// Include the page content template.
+			  the_post_thumbnail(); 
+				
+				endwhile;
+			?>
+       
         <div class="caption center-align"></div>
       </li>
       
@@ -103,8 +112,9 @@ body{  background-color: #fdd406 !important;}
 				while ( have_posts() ) : the_post();
 
 					// Include the page content template.
-				
-   the_post_thumbnail('thumbnail', array('class' => 'col offset-l1 l9 s12')); 
+			 <span class="the_content();"> </span>	
+                                            
+                                            
 					echo"<h4 style='text-align:center'>";
 				the_title();
 				echo"</h4>";
