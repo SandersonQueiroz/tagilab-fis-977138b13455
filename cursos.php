@@ -43,13 +43,30 @@ body{  background-color: #fdd406 !important;}
 
  
  <div class="col l8 s12 white  z-depth-1" style="min-height:532px;  margin-top: 8px;">
+   <?php
+				// Start the Loop.
+				while ( have_posts() ) : the_post();
+					// Include the page content template.
+					get_template_part( 'content', 'page' );
+					
+				endwhile;
+				    
+			?>
  
-          <h4>Especificações do Curso</h4>
+ 
+          <h5>Especificações do Curso</h5>
 
   				<ul class="collapsible popout" data-collapsible="accordion">
  <?php $id =get_the_ID(); 
-      
-    $mypages = get_pages( array( 'child_of' =>$id, 'sort_column' => 'post_date', 'sort_order' => 'desc' ) );
+ 
+ // pega o id da pagina caracteristicas-do-curso
+  	 $get_ds  =    get_pages('child_of=' . $id . '&post_title=caracteristicas-do-curso&hierarchical=5&number=1&parent='.$id);
+				 
+				 	  foreach ($get_ds as $get_d):
+					   $get_d->ID; 
+					endforeach;  
+   
+    $mypages = get_pages( array( 'child_of' =>$id,'exclude_tree'=> $get_d->ID, 'sort_column' => 'post_date', 'sort_order' => 'desc' ) );
      foreach( $mypages as $page ) {		
 		$content = $page->post_content;
 	  ?>
@@ -80,26 +97,19 @@ body{  background-color: #fdd406 !important;}
 
 <div class="card">
         <div class="card-content">
-          <span class="card-title grey-text text-darken-4">Noticias do Curso<i class="mdi-navigation-more-vert right"></i></span>
+          <span class="card-title grey-text text-darken-4">Caracteristicas do Curso<i class="mdi-navigation-more-vert right"></i></span>
         </div>
           <ul class="collection">  
 		   
-             <?php 
-			 
-			 // seria com que os posts tivesse uma cateria cursos ou uma tag tipo direito
-			 //
-			 //
-        $recent = new WP_Query("category_name=FIS&showposts=5"); 
-        while($recent->have_posts()) : $recent->the_post();
-        ?> 
-             <li class="collection-item avatar selected">
-                 <?php the_post_thumbnail('thumbnail', array('class' => 'circle')); ?>
-                   <span class="email-title"> <?php the_title(); ?></span>
-                  <p class="truncate grey-text ultra-small"> <?php echo the_date(); ?></p>
-                     
-                    </li>
-                   
-                    <?php endwhile; ?> </ul>
+   
+           
+            <?php 
+			// pega o conteudo de caracteristicas do curso
+			 $get_ds  =    get_pages('child_of=' . $id . '&post_title=caracteristicas-do-curso&hierarchical=5&number=1&parent='.$id);
+				 
+				 	  foreach ($get_ds as $get_d):
+					  echo $get_d->post_content; 
+					  endforeach;  ?>
                     </div>
                </div>
            </div> 
