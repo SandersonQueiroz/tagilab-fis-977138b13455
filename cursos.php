@@ -21,14 +21,7 @@ body{  background-color: #fdd406 !important;}
      <ul class="slides">
       <li>
       	
-      	 	<?php
-				// Start the Loop.
-				while ( have_posts() ) : the_post();
-					// Include the page content template.
-			  the_post_thumbnail(); 
-				
-				endwhile;
-			?>
+      	  <img src="<?php echo get_template_directory_uri(); ?>/assets/images/cursos/<?php global $post; echo $post->post_name; ?>.png"> <!-- random image -->
        
         <div class="caption center-align"></div>
       </li>
@@ -41,58 +34,7 @@ body{  background-color: #fdd406 !important;}
     <div class="row">
       <div class="col s12 amarelo margem">
 	 
-       <style>
-.ui-tabs.ui-tabs-vertical {
-    padding: 0;
-    
-}
-.ui-tabs.ui-tabs-vertical .ui-widget-header {
-    border: none;
-}
-.ui-tabs.ui-tabs-vertical .ui-tabs-nav {
-    float: left;
-   
-   
-    border-radius: 4px 0 0 4px;
-    
-}
-.ui-tabs.ui-tabs-vertical .ui-tabs-nav li {
-    clear: left;
-    
-    margin: 0.2em 0;
-   border-bottom: 1px solid gray;
-    border-width: 1px 0 1px 1px;
-    border-radius: 4px 0 0 4px;
-    overflow: hidden;
-    position: relative;
-    right: -2px;
-    z-index: 2;
-}
-.ui-tabs.ui-tabs-vertical .ui-tabs-nav li a {
-    display: block;
-    width: 100%;
-    padding: 0.6em 1em;
-}
-.ui-tabs.ui-tabs-vertical .ui-tabs-nav li a:hover {
-    cursor: pointer;
-}
-.ui-tabs.ui-tabs-vertical .ui-tabs-nav li.ui-tabs-active {
-    margin-bottom: 0.2em;
-    padding-bottom: 0;
-   
-}
-.ui-tabs.ui-tabs-vertical .ui-tabs-nav li:last-child {
-    margin-bottom: 10px;
-}
-.ui-tabs.ui-tabs-vertical .ui-tabs-panel {
-    float: left;
-    
-    
-    border-radius: 0;
-    position: relative;
-    left: -1px;
-}
-</style>
+     
 <script src="http://code.jquery.com/jquery-1.8.2.js"></script>
 <script src="http://code.jquery.com/ui/1.9.1/jquery-ui.js"></script>
  
@@ -101,60 +43,31 @@ body{  background-color: #fdd406 !important;}
 
  
  <div class="col l8 s12 white  z-depth-1" style="min-height:532px;  margin-top: 8px;">
- <div id="tabs"> 
-    <ul class="col s12 m12 l3" style="position:relative;min-height: 200px;">
-      
-    	<?php
-				// Start the Loop.
-				while ( have_posts() ) : the_post();
-			// correção do bug que evitava a pagina funcionar ?>		 
-			 <span class="<?php the_content(); ?>"> </span>	
-                                            
-              <?php                              
-					echo"<h4 style='text-align:center'>";
-				the_title();
-				echo"</h4>";
-				endwhile;
-			?>
-    
-    
- <?php $id =get_the_ID(); 
-         $pegartitulos = get_pages( array( 'child_of' =>$id, 'sort_column' => 'post_date', 'sort_order' => 'desc' ) );
-  
-	    foreach( $pegartitulos as $pages ):		
-		$contents = $pages->post_content;
-      ?>
-          <li>
-            <a href="#<?php echo $pages->ID; ?>"><?php echo $pages->post_title; ?></a>
-        </li>
-          
-       
-	<?php endforeach; ?>
+ 
+          <h4>Especificações do Curso</h4>
 
-       
-         
-    </ul>
-          <?php
-	$mypages = get_pages( array( 'child_of' =>$id, 'sort_column' => 'post_date', 'sort_order' => 'desc' ) );
+  				<ul class="collapsible popout" data-collapsible="accordion">
+ <?php $id =get_the_ID(); 
+      
+    $mypages = get_pages( array( 'child_of' =>$id, 'sort_column' => 'post_date', 'sort_order' => 'desc' ) );
      foreach( $mypages as $page ) {		
 		$content = $page->post_content;
 	  ?>
-          <div id="<?php echo $page->ID; ?>" class="col s12 m12 l9">
-		<h2><a href="<?php echo get_page_link( $page->ID ); ?>"><?php echo $page->post_title; ?></a></h2>
-		<div class="entry"><?php echo $content; ?></div>
+      
+
+    <li>
+      <div class="collapsible-header"><i class="material-icons">filter_drama</i><?php echo $page->post_title; ?></div>
+      <div class="collapsible-body">
+      
+       <?php echo $content; ?> 
          </div>
+         </li>
 	<?php
 	}	
 ?> 
 
-	
-</div> 
-<script>
-$('#tabs')
-    .tabs()
-    .addClass('ui-tabs-vertical ui-helper-clearfix');
-</script>
-		
+	</ul>
+ 
        
        </div>
      
