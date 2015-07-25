@@ -9,7 +9,6 @@
  * @package Odin
  * @since 2.2.0
  */
-
 get_header(); ?>
  
     <script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/assets/js/jssor.js"></script>
@@ -93,8 +92,6 @@ body{  background-color: #fdd406 !important;}
     position: relative;
     left: -1px;
 }
-
-
 </style>
 <script src="http://code.jquery.com/jquery-1.8.2.js"></script>
 <script src="http://code.jquery.com/ui/1.9.1/jquery-ui.js"></script>
@@ -109,12 +106,11 @@ body{  background-color: #fdd406 !important;}
       
     	<?php
 				// Start the Loop.
-				while ( have_posts() ) : the_post();
-
-					// Include the page content template.
-			 <span class="the_content();"> </span>	
+				while ( have_posts() ) : the_post();?>
+					 
+			 <span class="<?php the_content(); ?>"> </span>	
                                             
-                                            
+              <?php                              
 					echo"<h4 style='text-align:center'>";
 				the_title();
 				echo"</h4>";
