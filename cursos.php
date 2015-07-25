@@ -107,7 +107,7 @@ body{  background-color: #fdd406 !important;}
     	<?php
 				// Start the Loop.
 				while ( have_posts() ) : the_post();?>
-					 
+			// correção do bug que evitava a pagina funcionar 		 
 			 <span class="<?php the_content(); ?>"> </span>	
                                             
               <?php                              
