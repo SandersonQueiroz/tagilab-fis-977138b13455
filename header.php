@@ -29,8 +29,8 @@
         
     <link href="<?php echo get_template_directory_uri(); ?>/assets/css/malterialize.min.css" rel="stylesheet" type="text/css" media="all">
     <link href="<?php echo get_template_directory_uri(); ?>/assets/css/animate.css" rel="stylesheet" type="text/css" media="all">
-    
-	<link href="<?php echo get_template_directory_uri(); ?>/assets/images/favicon.ico" rel="shortcut icon" />
+    <link href="<?php echo get_template_directory_uri(); ?>/assets/images/favicon.ico" rel="shortcut icon" />
+	<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/assets/style.css">
 	<!-- Montserrat -->
 	<link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
 	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
@@ -108,7 +108,65 @@
 
 		
 	</header>
-	<div class="yellow accent-4"><span class="yellow accent-4">.</span></div>
+	
 
 
 <div id="main" class="row">
+<?php
+ 
+function mostraicone($nomeicon){
+if($nomeicon =='Fisioterapia'){
+	      $nomeicon ='fis-fisioterapia';
+} else if($nomeicon =='Direito') {
+	      $nomeicon ='fis-direito'; }
+  else if($nomeicon =='Farmácia') {
+	      $nomeicon ='fis-farmacia';
+} else if($nomeicon =='Enfermagem') {
+	      $nomeicon ='fis-farmacia'; }
+  else if($nomeicon =='Ciências Contábeis') {
+	      $nomeicon ='fis-cinciascontabeis'; }
+		  
+  else if($nomeicon =='Gestão e Planejamento Tributário') {
+	      $nomeicon ='fis-administrao'; }
+  else if($nomeicon =='Gestão Pública nas esferas Municipal, Estadual e Federal') {
+	      $nomeicon ='fis-administrao'; }
+  else if($nomeicon =='Gestão Empresarial (ênfase em Recursos Humanos)') {
+	      $nomeicon ='fis-administrao'; }
+  else if($nomeicon =='Direito Público: Administrativo, Financeiro e Tributário') {
+	      $nomeicon ='fis-direito'; }
+   else if($nomeicon =='Direito Processual Penal, Cível e Trabalhista') {
+	      $nomeicon ='fis-direito'; }
+		  
+  else if($nomeicon =='Fisioterapia Dermatofuncional') {
+	      $nomeicon ='fis-fisioterapia'; }
+  else if($nomeicon =='Fisioterapia em Readaptação Musculoesquelética e Desportiva') {
+	      $nomeicon ='fis-fisioterapia'; }
+		  
+  else if($nomeicon =='Enfermagem em Saúde do Trabalhador') {
+	      $nomeicon ='fis-fis-unicolor'; }
+  else if($nomeicon =='Enfermagem em Saúde da Mulher') {
+	      $nomeicon ='fis-fis-unicolor'; }
+   else if($nomeicon =='Saúde Pública') {
+	      $nomeicon ='fis-administrao'; }
+	
+  else if($nomeicon =='Construção de Edifícios') {
+	      $nomeicon ='fis-contruodeedificios'; }
+  else if($nomeicon =='Redes de Computadores') {
+	      $nomeicon ='fis-redesdecomputadores'; }
+   else if($nomeicon =='Segurança no trabalho') {
+	      $nomeicon ='fis-seg-trab'; }
+     else if($nomeicon =='Logística') {
+	      $nomeicon ='fis-logistica'; }
+ 
+       else   {
+	      $nomeicon ='fis-fis-unicolor';
+}
+
+
+
+ 
+
+ 
+return $nomeicon;}
+
+?>

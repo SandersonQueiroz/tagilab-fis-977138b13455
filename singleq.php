@@ -16,28 +16,12 @@ body{  background-color: #fff  !important;}
         top: auto !important;
     }
 }
-
 img[Attributes Style] {
   width: 100%;
   height: 441px;
 }
 .responsive-image{width: 105% !important; height:auto;}
 h1{font-size:x-large !important;}
-.collection-item.avatar {
-  height: auto !important;}
-  
- .noticia{  margin-right:1px;
-  margin-left: -21px;
-  margin-top: -20px;
-  max-height: 500px;
-  height: auto !important;}
-  @media (max-width:632px) {
-   .noticia{  margin-right: -21px;
-  margin-left: -21px;
-  margin-top: -20px;
-  max-height: 500px;
-  height: auto !important;}
-}
 </style>
 
 
@@ -46,12 +30,11 @@ h1{font-size:x-large !important;}
 
     <div class="row">
         <div class="col l9 ">
-            <div class="card medium noticia">
-                 
+            <div class="card medium" style="  margin: -20px; ">
+                <div class="col s12 m12 l12" style="   margin-left: -20px; position:relative; ">
                   <?php  the_post_thumbnail('recent-posts', array('class'=>'responsive-image')); ?>
-				  </div>
-              
-               <div class="col offset-l1 l11 s12 white"style="margin-top:-5%; position:relative;">     
+				  </div></div>
+                  
 
           	<?php
 				// Start the Loop.
@@ -68,15 +51,21 @@ h1{font-size:x-large !important;}
                
 
 
+              <div class="col s12 m12 l12" style="position:relative; margin-top:30px;">    
               
-				<?php	get_template_part( 'content', get_post_format() );	endwhile;
+				<?php	get_template_part( 'content', get_post_format() );?>
+                </div>
+                <div class="col s12 m12 l12" style="position:relative;">  
+				<?php	// If comments are open or we have at least one comment, load up the comment template.
+					if ( comments_open() || get_comments_number() ) :
+						comments_template();
+					endif; echo '</div>';
+				endwhile;
 			?>
-		     </div>
-              
 			
 
         </div>
-        <div class="col l3" style="margin-top:-21px;">
+        <div class="col l3">
             <div id="aside">
               
      

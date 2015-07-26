@@ -32,7 +32,7 @@ body{  background-color: #fdd406 !important;}
 
 <div class="section no-pad-bot">
     <div class="row">
-      <div class="col s12 amarelo margem">
+      <div class="col s12 white margem">
 	 
      
 <script src="http://code.jquery.com/jquery-1.8.2.js"></script>
@@ -42,7 +42,7 @@ body{  background-color: #fdd406 !important;}
  
 
  
- <div class="col l8 s12 white  z-depth-1" style="min-height:532px;  margin-top: 8px;">
+ <div class="col l8 s12 white" style="min-height:532px;  margin-top: 8px;">
    <?php
 				// Start the Loop.
 				while ( have_posts() ) : the_post();
@@ -66,7 +66,7 @@ body{  background-color: #fdd406 !important;}
 					   $get_d->ID; 
 					endforeach;  
    
-    $mypages = get_pages( array( 'child_of' =>$id,'exclude_tree'=> $get_d->ID, 'sort_column' => 'post_date', 'sort_order' => 'desc' ) );
+    $mypages = get_pages( array( 'child_of' =>$id,'exclude_tree'=> $get_d->ID, 'sort_column' => 'post_date', 'sort_order' => 'asc' ) );
      foreach( $mypages as $page ) {		
 		$content = $page->post_content;
 	  ?>

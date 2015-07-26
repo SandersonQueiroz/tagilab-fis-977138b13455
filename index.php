@@ -324,7 +324,7 @@ figure {
 					  ?>
 						   <div class="col s12 m6 l4 margim-top-boton">
                                  <div class="valign-wrapper">
-                                          <span class="<?php //echo $grad_name->post_content ?>"> </span>
+                                         <a href="<?php echo get_page_link( $grad_name->ID ); ?>"> <span class="<?php print(mostraicone($grad_name->post_title));  ?>"> </span></a>
                                           <span class="title-cursos"><a href="<?php echo get_page_link( $grad_name->ID ); ?>"><?php echo $grad_name->post_title; ?></a></span>
                                   </div>
                            </div>
@@ -338,8 +338,8 @@ figure {
 					  ?>
 						   <div class="col s12 m6 l4 margim-top-boton">
                                  <div class="valign-wrapper">
-                                          <span class="<?php //echo $grad_name->post_content ?>"> </span>
-                                          <span class="title-cursos"><?php echo $pos_name->post_title; ?></span>
+        <a href="<?php echo get_page_link( $pos_name->ID ); ?>"> <span class="<?php print(mostraicone($pos_name->post_title));  ?>"> </span></a>
+                            <span class="title-cursos"><a href="<?php echo get_page_link( $pos_name->ID ); ?>"><?php echo $pos_name->post_title; ?></a></span>
                                   </div>
                            </div>
                  <?php	  endforeach; ?>
@@ -351,8 +351,8 @@ figure {
 					  ?>
 						   <div class="col s12 m6 l4 margim-top-boton">
                                  <div class="valign-wrapper">
-                                          <span class="<?php //echo $grad_name->post_content ?>"> </span>
-                                          <span class="title-cursos"><?php echo $tec_name->post_title; ?></span>
+                                           <a href="<?php echo get_page_link( $tec_name->ID ); ?>"> <span class="<?php print(mostraicone($tec_name->post_title));  ?>"> </span></a>
+                            <span class="title-cursos"><a href="<?php echo get_page_link( $tec_name->ID ); ?>"><?php echo $tec_name->post_title; ?></a></span>
                                   </div>
                            </div>
                  <?php	  endforeach; ?>
