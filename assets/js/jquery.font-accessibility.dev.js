@@ -123,7 +123,7 @@
 				changeContrast: function(){
 					$(this.affectedTags).each(function(){
 						var current_tag = $(this);
-						current_tag.css('background-color', (!this.normalContrast) ? current_tag.data('originalBackground') : '#000');
+						current_tag.css('background-color', (!this.normalContrast) ? current_tag.data('originalBackground') : '#000 !important');
 						current_tag.css('color', (!this.normalContrast) ? current_tag.data('originalColor') : '#fff');
 					});
 

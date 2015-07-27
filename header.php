@@ -85,14 +85,15 @@
 				   
 				    <li><a class="dropdown-button" href="#!" data-activates="Cursos">Cursos<i class="material-icons right">arrow_drop_down</i></a></li>
 				    <li><a class="left" href="cursos">Fale com a FIS</a></li>
-				 
-				    
-			    </ul>
-				<ul class="right"> 
+				 	<ul class="right"> 
 			    	<li><a id="aumenta_fonte" class="white-text increase-me" href="#" title="Aumentar tamanho da fonte"><i class="fa fa-plus-square-o"></i></a></li>
 					<li><a id="reduz_fonte" class="white-text decrease-me" href="#" title="Reduzir tamanho da fonte"><i class="fa fa-minus-square-o"></i></a></li>
+                    <li><a id="contrast-text" class="white-text change-me" href="#" title="contraste"><i class="fa fa-minus-square-o"></i></a></li>
 
 			   </ul>
+				    
+			    </ul>
+			
 			    <ul class="side-nav" id="mobile-demo">
 			        <li><a href="sass.html">Sass</a></li>
 			        <li><a href="badges.html">Components</a></li>

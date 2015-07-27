@@ -126,10 +126,9 @@ The theme css is in assets/css/style.css
 background-color: #EC254C !important;
   color: whitesmoke;
   padding: 15px;}
-  .title-cursos{font-size:large;  font-weight: 700;width: 200px;}
+  .title-cursos{font-size:large;  font-weight: 700;}
 	.amarelo{background-color: #fdd406;}
-	.fis-azul { background-color: #008BBF; }
-	.departamentos, .red-fis{background:#ec254c !important;}
-	.card-content-fis{padding-top:0px !important;padding-bottom:0px !important; background:#FFF;}
-	.opaco {color: #FFFFFF !important; background: none !important; border:none !important; border-bottom:1px solid #F098A9 !important; width:calc(100% - 30px) !important; margin-left:15px !important; margin-right:15px !important;}
+	.departamentos, .red-fis{background: #ec254c;}
+	.card-content-fis{padding-top:0px !important;padding-bottom:0px !important; /* background:#FFF; */}
+	.opaco {color: #FFFFFF; background: none !important; border:none !important; border-bottom:1px solid #F098A9 !important; width:calc(100% - 30px) !important; margin-left:15px !important; margin-right:15px !important;}
  

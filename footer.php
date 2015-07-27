@@ -112,7 +112,7 @@ Contato: sesst@fis.edu.br</p>
 
 		/* Custom buttons */
 		$('#font-setting-buttons').easyView({
-			container: '#main',
+			container: '*',
 			increaseSelector: '.increase-me',
 			decreaseSelector: '.decrease-me',
 			normalSelector: '.reset-me',

@@ -258,7 +258,7 @@ figure {
   <div class="departamentos card">
           <div class="card-content-fis card-content">
 
-          <span class="card-title activator grey-text text-darken-4">Departamento<i class="mdi-navigation-more-vert right"></i></span>
+          <span class="card-title activator">Departamento<i class="mdi-navigation-more-vert right"></i></span>
         </div>
         
         <div class="collection">

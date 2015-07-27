@@ -51,7 +51,7 @@ h1{font-size:x-large !important;}
                   <?php  the_post_thumbnail('recent-posts', array('class'=>'responsive-image')); ?>
 				  </div>
               
-               <div class="col offset-l1 l11 s12 white"style="margin-top:-5%; position:relative;">     
+               <div class="col offset-l1 l11 s12 white" style="margin-top:-5%; position:relative; min-height:500px;">     
 
           	<?php
 				// Start the Loop.
